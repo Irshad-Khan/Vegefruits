@@ -23,7 +23,7 @@
             <span class="menu-item-label">Customers</span>
           </div><!-- menu-item -->
         </a><!-- br-menu-link -->
-        <a href="{{route('Employees.index')}}" class="br-menu-link">
+        <a href="{{route('employee.index')}}" class="br-menu-link">
           <div class="br-menu-item">
           <i class="fa fa-users"></i>
             <span class="menu-item-label">Employees</span>

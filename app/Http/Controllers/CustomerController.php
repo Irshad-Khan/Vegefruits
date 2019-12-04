@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
+    
     public function index()
     {
-        dd('CUSTOMERCONTROLLER');
+        dd('here');
     }
 }

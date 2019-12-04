@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNomenTable extends Migration
+class AddColumnSalaryToEmployeesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateNomenTable extends Migration
      */
     public function up()
     {
-        Schema::create('nomen', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('address');
-            $table->timestamps();
+        Schema::table('employees', function (Blueprint $table) {
+            $table->integer('salary');
         });
     }
 
@@ -28,7 +25,8 @@ class CreateNomenTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nomen');
-
+        Schema::table('employees', function (Blueprint $table) {
+            //
+        });
     }
 }
