@@ -20,5 +20,7 @@ Route::get('/dashboard', function(){
     return view('admin.dashboard');
 })->name('dashboard');
 
+Route::get('customer/index','CustomerController@index')->name('customer.index');
 
-Route::get('customer/index','EmployeeController@index')->name('customer.index');
+
+Route::get('Employees/index','EmployeesController@index')->name('Employees.index');

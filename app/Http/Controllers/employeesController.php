@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class nomanController extends Controller
+class employeesController extends Controller
 {
-    scheema
+    public function index()
+    {
+        dd('here');
+    }
 }

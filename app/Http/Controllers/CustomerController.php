@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class EmployeeController extends Controller
+class CustomerController extends Controller
 {
     public function index()
     {
-        dd('here');
+        dd('CUSTOMERCONTROLLER');
     }
 }
