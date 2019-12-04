@@ -9,7 +9,7 @@ class EmployeeController extends Controller
 {
     public function index()
     {
-        dd('here');
-    }
+        return view('employee.employee');
 }
 
+}

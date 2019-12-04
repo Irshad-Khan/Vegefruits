@@ -10,6 +10,6 @@ class CustomerController extends Controller
     
     public function index()
     {
-        dd('here');
+        return view('customer.index');
     }
 }
