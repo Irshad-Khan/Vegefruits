@@ -23,10 +23,10 @@
             <span class="menu-item-label">Customers</span>
           </div><!-- menu-item -->
         </a><!-- br-menu-link -->
-        <a href="{{route('dashboard')}}" class="br-menu-link">
+        <a href="{{route('employee.index')}}" class="br-menu-link">
           <div class="br-menu-item">
-            <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
-            <span class="menu-item-label">Cards &amp; Widgets</span>
+          <i class="fa fa-users"></i>
+                      <span class="menu-item-label">Employees</span>
           </div><!-- menu-item -->
         </a><!-- br-menu-link -->
         <a href="#" class="br-menu-link">

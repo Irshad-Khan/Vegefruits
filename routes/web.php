@@ -21,4 +21,7 @@ Route::get('/dashboard', function(){
 })->name('dashboard');
 
 
-Route::get('customer/index','EmployeeController@index')->name('customer.index');
+Route::get('customer/index','CustomerController@index')->name('customer.index');
+
+
+Route::get('employee/index','EmployeeController@index')->name('employee.index');
