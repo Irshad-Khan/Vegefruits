@@ -1,128 +1,125 @@
-<h2>Employment Application</h2>
-<script type="text/javascript">
-function ValidateForm(frm) {
-if (frm.First_Name.value == "") {alert('First name is required.');frm.First_Name.focus();return false;}
-if (frm.Last_Name.value == "") {alert('Last name is required.');frm.Last_Name.focus();return false;}
-if (frm.Email_Address.value == "") {alert('Email address is required.');frm.Email_Address.focus();return false;}
-if (frm.Email_Address.value.indexOf("@") < 1 || frm.Email_Address.value.indexOf(".") < 1) {alert('Please enter a valid email address.');frm.Email_Address.focus();return false;}
-if (frm.Position.value == "") {alert('Position is required.');frm.Position.focus();return false;}
-if (frm.Phone.value == "") {alert('Phone is required.');frm.Phone.focus();return false;}
-if (frm.skip_CaptchaCode.value == "") {alert('Enter security code.');frm.skip_CaptchaCode.focus();return false;}
-return true; }
-function ReloadCaptchaImage(captchaImageId) {
-var obj = document.getElementById(captchaImageId);
-var src = '' + obj.src;
-obj.src = '';
-var date = new Date();
-var pos = src.indexOf('&rad=');
-if (pos >= 0) { src = src.substr(0, pos); }
-obj.src = src + '&rad=' + date.getTime();
-return false; }
-</script>
-<hr />
-<form action="https://www.SnapHost.com/captcha/send.aspx" id="ContactUsCaptchaWebForm" method="post" onsubmit="return ValidateForm(this);" target="_top">
-<input id="skip_WhereToSend" name="skip_WhereToSend" type="hidden" value="your@email.com" />
-<input id="skip_SnapHostID" name="skip_SnapHostID" type="hidden" value="HQ4R96A5MMEW" />
-<input id="skip_WhereToReturn" name="skip_WhereToReturn" type="hidden" value="http://www.YourWebsiteAddress.com/ThankYouPage.htm" />
-<input id="skip_Subject" name="skip_Subject" type="hidden" value="Employment Application" />
-<input id="skip_ShowUsersIp" name="skip_ShowUsersIp" type="hidden" value="1" />
-<input id="skip_SendCopyToUser" name="skip_SendCopyToUser" type="hidden" value="1" />
-<table border="0" cellpadding="5" cellspacing="0">
+<html>
+    <head>
+    <title>Employee Registration Form</title>
+
+    </head>
+    <style>
+        body{
+            background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+        }
+        h3{
+            font-family: Georgia, serif;
+            /* font-size: 25px; */
+            letter-spacing: 0.6px;
+            word-spacing: 2px;
+            color: #0A0044;
+            font-weight: 700;
+            text-decoration: none;
+            font-style: italic;
+            font-variant: normal;
+            text-transform: none;
+            /* color:SlateBlue; */
+            text-align: center; 
+            text-decoration: underline
+            color: white;
+            text-shadow: 1px -1px 0 #767676, -1px 2px 1px;
+            margin-top: 25px;
+            font-size: 25px;
+            }
+            table{ 
+            color:white; 
+            font-family: Georgia, serif;
+            font-size: 25px;
+            letter-spacing: 0.6px;
+            word-spacing: 2px;
+            color: #0A0044;
+            font-weight: 700;
+            text-decoration: none;
+            font-style: italic;
+            font-variant: normal;
+            text-transform: none;
+            /* background-color: SlateBlue;  */
+            /* background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(179,9,9,1) 27%, rgba(0,212,255,1) 100%); */
+            border: 10px solid rgb(2,0,36);
+            /* border-image: conic-gradient(red, yellow, lime, aqua, blue, magenta, red) 1; */
+            border: 25px outset #1C6EA4;
+            border-radius: 40px 38px 40px 0px;
+            color: white;}
+            }
+            border-collapse: collapse; 
+            border: 2px solid navy
+            }
+            table.inner{
+            border: 0px
+            }
+            button{
+                background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+                width: 90px;
+            }
+            
+}
+    </style>
+ 
+<body>
+<h3 style>EMPLOYEE REGISTRATION FORM</h3>
+
+ 
+<table align="center" cellpadding = "10">
+ 
 <tr>
-<td style="width:50%">
-<b>First name *</b><br />
-<input name="First_Name" type="text" maxlength="50" style="width:260px" />
-</td>
-<td style="width:50%">
-<b>Last name *</b><br />
-<input name="Last_Name" type="text" maxlength="50" style="width:260px" />
+<td>Employee ID</td>
+<td><input type="text" name="Employee_ID" maxlength="30"/>
+
 </td>
 </tr>
 <tr>
-<td colspan="2">
-<b>Email *</b><br />
-<input name="Email_Address" type="text" maxlength="100" style="width:535px" />
+<td>FIRST NAME</td>
+<td><input type="text" name="First_Name" maxlength="30"/>
+
+</td>
+</tr>
+ 
+<!----- Last Name ---------------------------------------------------------->
+<tr>
+<td>LAST NAME</td>
+<td><input type="text" name="Last_Name" maxlength="30"/>
+
 </td>
 </tr>
 <tr>
-<td colspan="2">
-<b>Portfolio website</b><br />
-<input name="Portfolio" type="text" maxlength="255" value="http://" style="width:535px" />
+<td>EMAIL ID</td>
+<td><input type="text" name="Email_Id" maxlength="100" /></td>
+</tr>
+ 
+<!----- Mobile Number ---------------------------------------------------------->
+<tr>
+<td>MOBILE NUMBER</td>
+<td>
+<input type="text" name="Mobile_Number" maxlength="10" />
 </td>
 </tr>
 <tr>
-<td colspan="2">
-<b>Position you are applying for *</b><br />
-<input name="Position" type="text" maxlength="100" style="width:535px" />
+<td>CNIC</td>
+<td><input type="text" name="CNIC" maxlength="30"/>
+</tr>
+<tr>
+<td>JOINING DATE</td>
+<td><input type="date" name="joinin date" maxlength="30"/>
 </td>
 </tr>
 <tr>
-<td style="width:50%">
-<b>Salary requirements</b><br />
-<input name="Salary" type="text" maxlength="50" style="width:260px" />
-</td>
-<td style="width:50%">
-<b>When can you start?</b><br />
-<input name="StartDate" type="text" maxlength="50" style="width:260px" />
-</td>
+<td>ADDRESS <br /><br /><br /></td>
+<td><textarea name="Address" rows="4" cols="30"></textarea></td>
 </tr>
 <tr>
-<td style="width:50%">
-<b>Phone *</b><br />
-<input name="Phone" type="text" maxlength="50" style="width:260px" />
-</td>
-<td style="width:50%">
-<b>Fax</b><br />
-<input name="Fax" type="text" maxlength="50" style="width:260px" />
-</td>
-</tr>
-<tr>
-<td colspan="2">
-<b>Are you willing to relocate?</b><br />
-<input name="Relocate" type="radio" value="Yes" checked="checked" /> Yes &nbsp; &nbsp; &nbsp;
-<input name="Relocate" type="radio" value="No" /> No &nbsp; &nbsp; &nbsp;
-<input name="Relocate" type="radio" value="NotSure" /> Not sure
-</td>
-</tr>
-<tr>
-<td colspan="2">
-<b>Last company you worked for</b><br />
-<input name="Organization" type="text" maxlength="100" style="width:535px" />
-</td>
-</tr>
-<tr>
-<td colspan="2">
-<b>Reference / Comments / Questions</b><br />
-<textarea name="Reference" rows="7" cols="40" style="width:535px"></textarea>
-</td>
+    <td>
+    <button type="button">Submit</button><button type="button">Reset</button>
+    </td>
 </tr>
 </table>
-<br />
-<div style="text-align:center;">
-<table border="0" cellpadding="0" cellspacing="0" style="text-align:center; width:300px; margin:auto;">
-<tr><td colspan="2" style="padding-bottom:18px;">
-<!-- Please check our ProCaptcha service which is ad-free:
-https://www.SnapHost.com/captcha/ProCaptchaOverview.aspx -->
-<a href="http://www.snaphost.com/captcha/ReadyForms/ContactUsForm.aspx" alt="contact forms html" title="contact forms html">
-contact forms html</a></td></tr>
-<tr>
-<td><i>Enter security code</i></td>
-<td>SECURITY CODE</td>
-</tr>
-<tr>
-<td>
-<input name="skip_CaptchaCode" type="text" maxlength="6"
-style="width:130px; height:28px; font-size:24px; text-align:center;" />
-</td>
-<td>
-<a href="https://www.snaphost.com/captcha/ReadyForms/EmploymentApplicationForm.aspx"><img id="CaptchaImage" alt="Employment Application form" title="HTML code for Employment Application web form"
-style="margin-left:20px; border:1px solid #999999;"
-src="https://www.SnapHost.com/captcha/CaptchaImage.aspx?id=HQ4R96A5MMEW&ImgType=2" /></a>
-<br /><a href="#" onclick="return ReloadCaptchaImage('CaptchaImage');"><span style="font-size:12px;">reload image</span></a>
-</td>
-</tr>
-</table>
-<br /><br />
-<input name="skip_Submit" type="submit" value="Send Application" />
-</div>
+ 
 </form>
+ 
+</body>
+</html>
