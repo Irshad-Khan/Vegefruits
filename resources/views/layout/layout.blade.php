@@ -7,57 +7,48 @@
   <body>
 
     <!-- ########## START: LEFT PANEL ########## -->
-    <div class="br-logo"><a href=""><span>[</span><img style=" height: 50px; width:120px;" src="{{asset('img/vegelogo.jpg')}}" alt=""><span>]</span></a></div>
+    <div class="br-logo"><a href=""><span>[</span>bracket<span>]</span></a></div>
     <div class="br-sideleft overflow-y-auto">
       <label class="sidebar-label pd-x-15 mg-t-20">Navigation</label>
-      <div class="br-sideleft-menu">
-        <a href="#" class="br-menu-link active">
+      <div class="br-sideleft-menu ">
+        <a href="index.html" class="br-menu-link active">
           <div class="br-menu-item">
-            <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
+            <i class=" menu-item-icon icon ion-ios-home-outline tx-22"></i>
             <span class="menu-item-label">Dashboard</span>
           </div><!-- menu-item -->
         </a><!-- br-menu-link -->
-        <a href="{{route('customer.index')}}" class="br-menu-link">
+        <a href="" class="br-menu-link">
           <div class="br-menu-item">
           <i class="fa fa-users"></i>
-            <span class="menu-item-label">Customers</span>
+            <span class="menu-item-label">Employee</span>
           </div><!-- menu-item -->
         </a><!-- br-menu-link -->
-        <a href="{{route('employee.index')}}" class="br-menu-link">
+        <a href="" class="br-menu-link">
           <div class="br-menu-item">
-          <i class="fa fa-users"></i>
-            <span class="menu-item-label">Employees</span>
+            <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
+            <span class="menu-item-label">Customers</span>
           </div><!-- menu-item -->
         </a><!-- br-menu-link -->
         <a href="#" class="br-menu-link">
           <div class="br-menu-item">
             <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
-            <span class="menu-item-label">UI Elements</span>
+            <span class="menu-item-label">All Tasks</span>
             <i class="menu-item-arrow fa fa-angle-down"></i>
           </div><!-- menu-item -->
         </a><!-- br-menu-link -->
         <ul class="br-menu-sub nav flex-column">
-          <li class="nav-item"><a href="accordion.html" class="nav-link">Accordion</a></li>
-          <li class="nav-item"><a href="alerts.html" class="nav-link">Alerts</a></li>
-          <li class="nav-item"><a href="buttons.html" class="nav-link">Buttons</a></li>
-          <li class="nav-item"><a href="cards.html" class="nav-link">Cards</a></li>
-          <li class="nav-item"><a href="icons.html" class="nav-link">Icons</a></li>
-          <li class="nav-item"><a href="modal.html" class="nav-link">Modal</a></li>
-          <li class="nav-item"><a href="pagination.html" class="nav-link">Pagination</a></li>
-          <li class="nav-item"><a href="popups.html" class="nav-link">Tooltip &amp; Popover</a></li>
-          <li class="nav-item"><a href="progress.html" class="nav-link">Progress</a></li>
-          <li class="nav-item"><a href="spinners.html" class="nav-link">Spinners</a></li>
-          <li class="nav-item"><a href="typography.html" class="nav-link">Typography</a></li>
+          <li class="nav-item"><a href="" class="nav-link">All Customers</a></li>
+          <li class="nav-item"><a href="" class="nav-link">Tasks Detials</a></li>
+          
         </ul>
-        
-        
-       
         
         
       </div><!-- br-sideleft-menu -->
 
+      
+      </div><!-- info-lst -->
 
-      <div class="info-list">
+      <br>
     </div><!-- br-sideleft -->
     <!-- ########## END: LEFT PANEL ########## -->
 
@@ -216,7 +207,7 @@
                 <li><a href=""><i class="icon ion-ios-download"></i> Downloads</a></li>
                 <li><a href=""><i class="icon ion-ios-star"></i> Favorites</a></li>
                 <li><a href=""><i class="icon ion-ios-folder"></i> Collections</a></li>
-                <li><a href=""><i class="icon ion-power"></i> Sign Out</a></li>
+                <li><a href="{{ url('/logout') }}"><i class="icon ion-power"></i> Sign Out</a></li>
               </ul>
             </div><!-- dropdown-menu -->
           </div><!-- dropdown -->
@@ -630,10 +621,18 @@
 
     <!-- ########## START: MAIN PANEL ########## -->
     <div class="br-mainpanel">
+    <div class="flash-message" style="width: 300px; margin-left: auto; margin-right: auto;">
+      @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+        @if(Session::has('alert-' . $msg))
+        <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}</p>
+        @endif
+      @endforeach
+    </div>
     @yield('content')
     </div><!-- br-mainpanel -->
     <!-- ########## END: MAIN PANEL ########## -->
 
     @include('layout.partial.footerjs')
+    @yield('javascript')
   </body>
 </html>

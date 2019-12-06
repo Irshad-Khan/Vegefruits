@@ -9,7 +9,7 @@ class EmployeeController extends Controller
 {
     public function index()
     {
-        return view('employee.employee');
+        return view('employee.index');
 }
 
 }
